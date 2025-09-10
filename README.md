@@ -2,6 +2,10 @@
 
 Cartify is a Spring Boot + MySQL backend for an e-commerce platform. It provides RESTful APIs for user management, product catalog, shopping cart, and order handling with session-based authentication and role-based access control. The project follows a layered architecture with controllers, services, and repositories.
 
+## E-R Diagram for the application
+
+![E-R Diagram](./ER%20Diagram/E-Commerce%20API%20ER%20Diagram.jpeg?raw=true)
+
 ## Installation & Run
 
 1. Create MySQL database:
