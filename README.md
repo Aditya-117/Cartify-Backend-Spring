@@ -1,64 +1,111 @@
 # REST API for an E-Commerce Application
 
-* We have developed this REST API for an e-commerce application. This API performs all the fundamental CRUD operations of any e-commerce platform with user validation at every step.
-* This project is developed by a team of 5 members during our project week in Masai School, Bengaluru. 
+Cartify is a **Spring Boot–based REST API** for an e-commerce application.  
+It supports **customer and seller workflows**, including authentication, product management, cart operations, and order placement, with validation enforced at each step.
+
+This backend was developed as an **end-to-end backend project** to demonstrate real-world API design, persistence, validation, and session handling.
+
+---
+
+## 🧩 Tech Stack
+
+- Java
+- Spring Boot
+- Spring Framework
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Swagger (OpenAPI)
+ 
+---
 
 
 ## E-R Diagram for the application
 
 ![E-R Diagram](./ER%20Diagram/E-Commerce%20API%20ER%20Diagram.jpeg?raw=true)
 
-## Tech Stack
 
-* Java
-* Spring Framework
-* Spring Boot
-* Spring Data JPA
-* Hibernate
-* MySQL
+## 🧱 Architecture Overview
 
-## Modules
+The application follows a **layered architecture**:
 
-* Login, Logout Module
-* Seller Module
-* Customer Module
-* Product Module
-* Cart Module
-* Order Module
+- Controllers handle HTTP requests and responses
+- Services contain business logic
+- Repositories interact with the database using JPA
+- MySQL is used for persistent storage
 
-## Features
+---
 
-* Customer and Seller authentication & validation with session token having validity of 1 hour for security purposes
-* Seller Features:
-    * Administrator Role of the entire application
-    * Only registered seller with valid session token can add/update/delete products from main database
-    * Seller can access the details of different customers, orders
-* Customer Features:
-    * Registering themselves with application, and logging in to get the valid session token
-    * Viewing different products and adding them to cart and placing orders
-    * Only logged in user can access his orders, cart and other features.
+## 📦 Modules
 
-## Contributors
+- Authentication (Login / Logout)
+- Customer Module
+- Seller Module
+- Product Module
+- Cart Module
+- Order Module
 
-* [@abinashpanigrahi](https://github.com/abinashpanigrahi)
-* [@Dathuram16](https://github.com/Dathuram16)
-* [@kamalvinjamoori](https://github.com/kamalvinjamoori)
-* [@anandrajsingh05](https://github.com/anandrajsingh05)
-* [@Adithyanathkv](https://github.com/Adithyanathkv)
+---
+
+## ✨ Key Features
+
+### 🔐 Authentication & Session Management
+- Customer and Seller authentication
+- Session-based token system
+- Tokens stored in database with **1-hour validity**
+
+### 🧑‍💼 Seller Features
+- Register and login as a seller
+- Add, update, and delete products
+- View seller-specific products
+- Access order and customer-related information
+
+### 🧑‍💻 Customer Features
+- Customer registration and login
+- View products
+- Add products to cart
+- Place orders using cart items
+- View order history and cart details
+
+---
+
+## 📘 API Documentation (Swagger)
+
+Swagger (OpenAPI) is integrated for **interactive API documentation and testing**.
+
+Once the application is running, Swagger UI can be accessed at:
+
+`http://localhost:8009/swagger-ui.html`
 
 
-## Installation & Run
+Swagger provides:
+- A complete list of all available REST APIs
+- Request and response schemas
+- Interactive testing using **Try it out**
+- Auto-generated documentation based on controller definitions
 
-* Before running the API server, you should update the database config inside the [application.properties](E-Commerce-Backend\src\main\resources\application.properties) file. 
-* Update the port number, username and password as per your local database config.
+---
+
+## ⚙️ Installation & Running the Application
+
+### 1️⃣ Database Setup
+
+Ensure MySQL is running and create the database:
+
+```sql
+CREATE DATABASE cartify;
+```
 
 ```
-    server.port=8009
+server.port=8009
 
-    spring.datasource.url=jdbc:mysql://localhost:3306/ecommercedb
-    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-    spring.datasource.username=root
-    spring.datasource.password=root
+spring.datasource.url=jdbc:mysql://localhost:3306/cartify
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=root
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 
 ```
 
