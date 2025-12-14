@@ -179,7 +179,7 @@ public class SellerServiceImpl implements SellerService {
 			
 		Optional<Seller> opt = sellerDao.findById(user.getUserId());
 			
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new SellerException("Seller does not exist");
 			
 		Seller existingSeller = opt.get();

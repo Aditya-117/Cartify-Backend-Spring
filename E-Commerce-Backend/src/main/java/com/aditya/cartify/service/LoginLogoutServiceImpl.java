@@ -43,7 +43,7 @@ public class LoginLogoutServiceImpl implements LoginLogoutService{
 		
 		Optional<Customer> res = customerDao.findByMobileNo(loginCustomer.getMobileId());
 		
-		if(res.isEmpty())
+		if(!res.isPresent())
 			throw new CustomerNotFoundException("Customer record does not exist with given mobile number");
 		
 		Customer existingCustomer = res.get();
@@ -145,7 +145,7 @@ public class LoginLogoutServiceImpl implements LoginLogoutService{
 		
 		Optional<Seller> res = sellerDao.findByMobile(seller.getMobile());
 		
-		if(res.isEmpty())
+		if(!res.isPresent())
 			throw new SellerNotFoundException("Seller record does not exist with given mobile number");
 		
 		Seller existingSeller = res.get();

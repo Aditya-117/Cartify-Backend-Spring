@@ -57,7 +57,7 @@ public class CartServiceImpl implements CartService {
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -111,7 +111,7 @@ public class CartServiceImpl implements CartService {
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -127,7 +127,7 @@ public class CartServiceImpl implements CartService {
 		
 		Optional<Cart> optCart= cartDao.findById(cartId);
 		
-		if(optCart.isEmpty()) {
+		if(!optCart.isPresent()) {
 			throw new CartItemNotFound("cart Not found by Id");
 		}
 //		return optCart.get().getProducts();
@@ -150,7 +150,7 @@ public class CartServiceImpl implements CartService {
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -213,7 +213,7 @@ public class CartServiceImpl implements CartService {
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();

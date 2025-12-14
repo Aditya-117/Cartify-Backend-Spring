@@ -20,11 +20,11 @@ public class CartifyBackendApplication {
 	}
 	
 	@Bean
-	public OpenAPI customOpenAPI(@Value("${springdoc.version}") String appVersion) {
+	public OpenAPI customOpenAPI() {
 	   return new OpenAPI()
 	    .components(new Components().addSecuritySchemes("basicScheme",
 	            new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("basic")))
-	    .info(new Info().title("E-Commerce Application REST API").version(appVersion)
+	    .info(new Info().title("E-Commerce Application REST API").version("1.0")
 	            .license(new License().name("Apache 2.0").url("http://springdoc.org")));
 	}
 

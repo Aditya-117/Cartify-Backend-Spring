@@ -81,7 +81,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -130,7 +130,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> res = customerDao.findByEmailId(customer.getEmailId());
 		
-		if(opt.isEmpty() && res.isEmpty())
+		if(!opt.isPresent() && !res.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist with given mobile no or email-id");
 		
 		Customer existingCustomer = null;
@@ -197,7 +197,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -232,7 +232,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -274,7 +274,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -301,7 +301,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -328,7 +328,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -371,7 +371,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();
@@ -399,7 +399,7 @@ public class CustomerServiceImpl implements CustomerService{
 		
 		Optional<Customer> opt = customerDao.findById(user.getUserId());
 		
-		if(opt.isEmpty())
+		if(!opt.isPresent())
 			throw new CustomerNotFoundException("Customer does not exist");
 		
 		Customer existingCustomer = opt.get();

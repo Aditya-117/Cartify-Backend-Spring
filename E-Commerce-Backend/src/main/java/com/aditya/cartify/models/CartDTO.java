@@ -3,7 +3,8 @@ import javax.validation.constraints.*;
 
 import lombok.*;
 
-
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

@@ -11,6 +11,8 @@ import com.aditya.cartify.models.ProductStatus;
 import com.aditya.cartify.repository.ProductDao;
 import lombok.*;
 
+@Getter
+@Setter
 @Service
 public class CartItemServiceImpl implements CartItemService{
 
